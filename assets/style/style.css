@@ -1,0 +1,21 @@
+body{
+background-color: aquamarine;
+}
+.row.dettagli{
+border-bottom: 2px solid black;
+border-top: 2px solid black;
+}
+.dettagli{
+height: 150px;
+}
+.dati{
+background-color: azure;
+}
+
+.container.colore{
+background-color: white;
+}
+
+.coloreGrigio{
+background-color: gray;
+}

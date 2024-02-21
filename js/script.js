@@ -2,6 +2,7 @@
 const km = document.querySelector(".inputkm");
 const eta = document.querySelector(".selezioneEta")
 const nomeP = document.querySelector(".nomeP")
+const display = document.querySelector(".d-none")
 let prezzoConSconti;
 let prezzoTotale;
 let carrozzaP;
@@ -52,6 +53,8 @@ generator.addEventListener("click", function(event){
   codiceCP = Math.floor(Math.random() * 100000) + 1000;
   console.log(carrozzaP, codiceCP);
   // display
+  display.classList.toggle("d-none")
+  console.log(display);
   // Informazioni
   nome.innerHTML = nomeP.value
 
@@ -61,7 +64,7 @@ generator.addEventListener("click", function(event){
 
   codice.innerHTML = codiceCP
 
-  costo.innerHTML = prezzoTotale
+  costo.innerHTML += prezzoTotale
 
 console.log(nomeP.value);
 

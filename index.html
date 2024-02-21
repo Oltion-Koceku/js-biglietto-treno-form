@@ -31,38 +31,39 @@
                 <option value="normale">età dai 18 ai 64</option>
               </select>
               
-              <div class="button-ol">
-                <button class="generator">Genera Biglietto</button>
+              <div class="button-ol d-flex">
+                <button class="generator btn btn-danger ">Genera Biglietto</button>
+                <button type="reset" class="annulla btn btn-dark ">Annulla</button>
               </div>
           </form>
           </div>
         </div>
       </div>
-      <div class="row mt-5">
-        <div class="col-12">
+      <div class="row mt-5 d-none ">
+        <div class="col-12 d-flex flex-column align-items-center ">
           <h1>Il tuo biglietto</h1>
-          <div class="container">
+          <div class="container colore">
             <h2>Dettaglio Passeggeri</h2>
-            <div class="row">
-              <div class="col-3">
+            <div class="row dettagli">
+              <div class="col-3 coloreGrigio d-flex flex-column justify-content-around ">
                 <h3>Nome Passeggero</h3>
                 <p class="nome"></p>
               </div>
-              <div class="col-3">
+              <div class="col-3 d-flex flex-column justify-content-around  ">
                 <h4>Offerta</h4>
                 <p class="offerta"></p>
               </div>
-              <div class="col-2">
+              <div class="col-2 d-flex flex-column justify-content-around ">
                 <h4>Carrozza</h4>
                 <p class="carrozza"></p>
               </div>
-              <div class="col-2">
+              <div class="col-2 d-flex flex-column justify-content-around ">
                 <h4>Codice CP</h4>
                 <p class="codice"></p>
               </div>
-              <div class="col-2">
+              <div class="col-2 d-flex flex-column justify-content-around ">
                 <h4>Costo Biglietto</h4>
-                <p class="costo"></p>
+                <p class="costo">&euro;</p>
               </div>
             </div>
           </div>
