@@ -2,18 +2,11 @@
 const km = document.querySelector(".inputkm");
 const eta = document.querySelector(".selezioneEta")
 let prezzoConSconti;
+let prezzoTotale;
 
 // button
 const generator = document.querySelector(".generator")
 
-// click
-generator.addEventListener("click", function(event){
-  event.preventDefault();
-  console.log(km.value);
-
-})
-
-generator.addEventListener("click", sceltaEta)
 
 // Calcoli
 
@@ -24,22 +17,25 @@ const prezzoOver = (prezzoBiglietto * 40 )/100;
 
 console.log(prezzoMinorenne, prezzoBiglietto, prezzoOver);
 
-if(eta < 18){
-  prezzoConSconti = prezzoBiglietto - prezzoMinorenne;
-}else if(eta > 65){
-  prezzoConSconti = prezzoBiglietto - prezzoOver;
-}else{
-  prezzoConSconti = prezzoBiglietto
-}
+// click
+generator.addEventListener("click", function(event){
+  event.preventDefault();
+  console.log(km.value);
+  if(eta.value == "minorenne"){
+    prezzoConSconti = prezzoBiglietto - prezzoMinorenne;
+  }else if(eta.value == "over"){
+    prezzoConSconti = prezzoBiglietto - prezzoOver;
+  }else{
+    prezzoConSconti = prezzoBiglietto
+  }
+  
+  // Prezzo da pagare
+  prezzoTotale = prezzoConSconti.toFixed(2);
+  console.log(prezzoConSconti, prezzoTotale);
+})
 
+generator.addEventListener("click", sceltaEta)
 
-console.log(prezzoConSconti);
-// Prezzo da pagare
-
-let prezzoTotale = prezzoConSconti.toFixed(2);
-
-
-console.log(prezzoConSconti, prezzoTotale);
 // function
 
 function sceltaEta(){
