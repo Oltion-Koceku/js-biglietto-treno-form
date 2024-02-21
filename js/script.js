@@ -3,10 +3,12 @@ const km = document.querySelector(".inputkm");
 const eta = document.querySelector(".selezioneEta")
 const nomeP = document.querySelector(".nomeP")
 const display = document.querySelector(".d-none")
+const errore = document.querySelector(".errore")
 let prezzoConSconti;
 let prezzoTotale;
 let carrozzaP;
 let codiceCP;
+let isValidData = true;
 
 // elementi P
 const nome = document.querySelector(".nome")
@@ -23,25 +25,25 @@ const generator = document.querySelector(".generator")
 
 
 // click
-generator.addEventListener("click", function(event){
+generator.addEventListener("click", function (event) {
   event.preventDefault();
   console.log(km.value);
-  
+
   const prezzoBiglietto = km.value * 0.21;
-  
-  const prezzoMinorenne = (prezzoBiglietto * 20 )/100;
-  const prezzoOver = (prezzoBiglietto * 40 )/100;
-  
+
+  const prezzoMinorenne = (prezzoBiglietto * 20) / 100;
+  const prezzoOver = (prezzoBiglietto * 40) / 100;
+
   console.log(prezzoMinorenne, prezzoBiglietto, prezzoOver, nome.value);
 
-  if(eta.value == "minorenne"){
+  if (eta.value == "minorenne") {
     prezzoConSconti = prezzoBiglietto - prezzoMinorenne;
-  }else if(eta.value == "over"){
+  } else if (eta.value == "over") {
     prezzoConSconti = prezzoBiglietto - prezzoOver;
-  }else{
+  } else {
     prezzoConSconti = prezzoBiglietto
   }
-  
+
   // Prezzo da pagare
   prezzoTotale = prezzoConSconti.toFixed(2);
   console.log(prezzoConSconti, prezzoTotale);
@@ -64,9 +66,17 @@ generator.addEventListener("click", function(event){
 
   codice.innerHTML = codiceCP
 
-  costo.innerHTML += prezzoTotale
+  costo.innerHTML = prezzoTotale + ("&euro;");
 
-console.log(nomeP.value);
+  console.log(nomeP.value);
+
+  // // Validità
+  // if (isNaN(km)) {
+  //   errore.innerHTML = `
+  //   <h1>Ricarica la pagina Perche non hai scritto correttamente i KM</h1>
+  //   `
+  // }else{
+  // }
 
 })
 
@@ -74,7 +84,7 @@ generator.addEventListener("click", sceltaEta)
 
 // function
 
-function sceltaEta(){
+function sceltaEta() {
   console.log(eta.value);
 
 }
