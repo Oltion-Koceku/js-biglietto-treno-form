@@ -1,6 +1,7 @@
 // elementi
 const km = document.querySelector(".inputkm");
 const eta = document.querySelector(".selezioneEta")
+const nome = document.querySelector(".nomeP")
 let prezzoConSconti;
 let prezzoTotale;
 
@@ -10,17 +11,19 @@ const generator = document.querySelector(".generator")
 
 // Calcoli
 
-const prezzoBiglietto = km.value * 0.21;
-
-const prezzoMinorenne = (prezzoBiglietto * 20 )/100;
-const prezzoOver = (prezzoBiglietto * 40 )/100;
-
-console.log(prezzoMinorenne, prezzoBiglietto, prezzoOver);
 
 // click
 generator.addEventListener("click", function(event){
   event.preventDefault();
   console.log(km.value);
+  
+  const prezzoBiglietto = km.value * 0.21;
+  
+  const prezzoMinorenne = (prezzoBiglietto * 20 )/100;
+  const prezzoOver = (prezzoBiglietto * 40 )/100;
+  
+  console.log(prezzoMinorenne, prezzoBiglietto, prezzoOver, nome.value);
+
   if(eta.value == "minorenne"){
     prezzoConSconti = prezzoBiglietto - prezzoMinorenne;
   }else if(eta.value == "over"){
