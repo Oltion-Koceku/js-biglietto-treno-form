@@ -1,9 +1,18 @@
 // elementi
 const km = document.querySelector(".inputkm");
 const eta = document.querySelector(".selezioneEta")
-const nome = document.querySelector(".nomeP")
+const nomeP = document.querySelector(".nomeP")
 let prezzoConSconti;
 let prezzoTotale;
+let carrozzaP;
+let codiceCP;
+
+// elementi P
+const nome = document.querySelector(".nome")
+const offerta = document.querySelector(".offerta")
+const carrozza = document.querySelector(".carrozza")
+const codice = document.querySelector(".codice")
+const costo = document.querySelector(".costo")
 
 // button
 const generator = document.querySelector(".generator")
@@ -35,6 +44,27 @@ generator.addEventListener("click", function(event){
   // Prezzo da pagare
   prezzoTotale = prezzoConSconti.toFixed(2);
   console.log(prezzoConSconti, prezzoTotale);
+
+  // Biglietto
+
+  // Random
+  carrozzaP = Math.floor(Math.random() * 10) + 1;
+  codiceCP = Math.floor(Math.random() * 100000) + 1000;
+  console.log(carrozzaP, codiceCP);
+  // display
+  // Informazioni
+  nome.innerHTML = nomeP.value
+
+  offerta.innerHTML = ("Biglietto Standard")
+
+  carrozza.innerHTML = carrozzaP
+
+  codice.innerHTML = codiceCP
+
+  costo.innerHTML = prezzoTotale
+
+console.log(nomeP.value);
+
 })
 
 generator.addEventListener("click", sceltaEta)
